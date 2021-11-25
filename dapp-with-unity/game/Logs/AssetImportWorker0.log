@@ -136,3 +136,20 @@ Received Import Request.
 Start importing Assets/Canvas.prefab using Guid(85c08a88e200f14449e787cf2e13aaa2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83629bf9ca5391db24b60e191f7aba8c') in 0.056489 seconds 
   Import took 0.060201 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 1552.295378 seconds.
+  path: Assets/Scenes/Canvas.prefab
+  artifactKey: Guid(d57252b6a6da5aa43b6ba3054f7a25aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Canvas.prefab using Guid(d57252b6a6da5aa43b6ba3054f7a25aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7595dc54dab78c82c4206e3655853bc0') in 0.037316 seconds 
+  Import took 0.071980 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 369.689290 seconds.
+  path: Assets/Scenes/Canvas.prefab
+  artifactKey: Guid(d57252b6a6da5aa43b6ba3054f7a25aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Canvas.prefab using Guid(d57252b6a6da5aa43b6ba3054f7a25aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d541a1604e5836f253d2de348a46f6b') in 0.006328 seconds 
+  Import took 0.060924 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
