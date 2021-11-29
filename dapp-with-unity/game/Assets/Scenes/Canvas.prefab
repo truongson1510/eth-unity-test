@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 0x77d196C6BC4341cA5Cb90Be3fb967e3d2f74EBaB
+  m_Text: 0x8803880Bc17cbD701C87532747c96dD096cE1928
 --- !u!1 &673085786
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +416,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.6132076, g: 0.61084646, b: 0.5871752, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -436,7 +436,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5269245434290182958}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5269245435041057718}
+        m_TargetAssemblyTypeName: SimpleStore, Assembly-CSharp
+        m_MethodName: OnSetValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5269245435232605749
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,6 +683,7 @@ GameObject:
   - component: {fileID: 5269245435705347397}
   - component: {fileID: 5269245435705347396}
   - component: {fileID: 5269245435705347395}
+  - component: {fileID: 5269245435041057718}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -766,6 +779,24 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5269245435041057718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5269245435705347394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce328d0e5a7fea649a161eee76c6099b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contractABI: {fileID: 4900000, guid: 9c9a5cb3f31cb414dbc86328b0cf1421, type: 3}
+  contractAddress: {fileID: 4900000, guid: 08865527d775f8344a665a1653f717df, type: 3}
+  inputValue: {fileID: 5269245435232605751}
+  currentValueText: {fileID: 5269245436255039292}
+  addressText: {fileID: 162287400}
+  balanceText: {fileID: 1090859835}
 --- !u!1 &5269245435754770000
 GameObject:
   m_ObjectHideFlags: 0
