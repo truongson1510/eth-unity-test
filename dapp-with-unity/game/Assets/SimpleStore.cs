@@ -62,7 +62,7 @@ public class SimpleStore : MonoBehaviour
         while (true)
         {
             UpdateStatus();
-            //Debug.Log("Updating . . .");
+            
             yield return new WaitForSeconds(1f);
         }
     }
@@ -73,8 +73,6 @@ public class SimpleStore : MonoBehaviour
 
         Debug.Log("newValFromContract = " + newValFromContract);
         currentValueText.text = "" + newValFromContract;
-
-
 
         var newBalance = await web3.Eth.GetBalance.SendRequestAsync(from);  // from = account.Address;   
         ethBalance = newBalance;            //  Type HexBigInteger
