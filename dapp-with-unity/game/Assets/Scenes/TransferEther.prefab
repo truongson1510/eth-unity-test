@@ -680,7 +680,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 0xD09b4DDdFf2fe3dBaB669805460AC6f3141c98Dc
+  m_Text: ' 0x2aA003C237129981649180de594EB9a046a200e9'
 --- !u!1 &1682754758667598230
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,9 +1083,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: NethereumSample, Assembly-CSharp
-        m_MethodName: onConnectAccount
+      - m_Target: {fileID: 2390263222405364329}
+        m_TargetAssemblyTypeName: TransferEther, Assembly-CSharp
+        m_MethodName: Transfer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

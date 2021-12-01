@@ -20,14 +20,24 @@ public class TransferEther : MonoBehaviour
 
     private Account myaccount;
     private decimal myBalance;
-    private static string URL = "http://localhost:8545";
-    private static string PRIVATEKEY = "0xf9d11306d06e55a359f5a7ec2fe9536c02116b3b7c23041f0c4abb4978ed501d";
+    private static string URL = "https://data-seed-prebsc-1-s1.binance.org:8545/";                          // RPC
+    private static string PRIVATEKEY = "12cc96cf2ff9b640b13c29b543997a840d00a78dd2e281e1da6bd5356dbc7cb7";  // MetamaskTestnet
 
     private async void Start()
     {
-        myaccount = new Account(PRIVATEKEY);
+        myaccount = new Account(PRIVATEKEY, 97);                                                            // Chainid = 97 or 0x61
         myBalance = await GetAccountTask(myaccount);
-        BalanceText.text = string.Format("{0:0.00} ETH", myBalance);
+        BalanceText.text = string.Format("{0:0.0000} TBNB", myBalance);
+    }
+
+    public async void TransferETH()
+    {
+
+        var web3 = new Web3(myaccount, URL);
+        web3.TransactionManager.UseLegacyAsDefault = true;
+        var toAddress = ReceiveAddress.text.ToString();
+
+        var transaction = await web3.Eth.GetEtherTransferService().TransferEtherAsync(toAddress, decimal.Parse(Amount.text));
     }
 
     private async Task<decimal> GetAccountTask(Account account)
@@ -36,7 +46,7 @@ public class TransferEther : MonoBehaviour
         var balanace = await web3.Eth.GetBalance.SendRequestAsync(account.Address);
 
         var etheramount = Web3.Convert.FromWei(balanace);
-        Debug.Log($"<color=orange> {account.Address}  </color> Possesses <color=orange> {etheramount} </color> ETH");
+        Debug.Log($"<color=orange> {account.Address}  </color> possesses <color=orange> {etheramount} TBNB</color>");
 
         return etheramount;
     }
