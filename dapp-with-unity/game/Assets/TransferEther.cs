@@ -37,17 +37,32 @@ public class TransferEther : MonoBehaviour
         web3.TransactionManager.UseLegacyAsDefault = true;
         var toAddress = ReceiveAddress.text.ToString();
 
-        var transaction = await web3.Eth.GetEtherTransferService().TransferEtherAsync(toAddress, decimal.Parse(Amount.text));
+        var transaction  = await web3.Eth.GetEtherTransferService().TransferEtherAsync(toAddress, decimal.Parse(Amount.text));                    // send out in ether
+        var transaction1 = await web3.TransactionManager.SendTransactionAsync(myaccount.Address, toAddress, new HexBigInteger(Amount.text));      // Send out in wei
+
+        Debug.Log("Transaction successful, detail: <color=green> https://testnet.bscscan.com/tx/" + $"{transaction}</color>");
     }
 
     private async Task<decimal> GetAccountTask(Account account)
     {
         Web3 web3 = new Web3(account, URL);
+
         var balanace = await web3.Eth.GetBalance.SendRequestAsync(account.Address);
 
         var etheramount = Web3.Convert.FromWei(balanace);
         Debug.Log($"<color=orange> {account.Address}  </color> possesses <color=orange> {etheramount} TBNB</color>");
 
         return etheramount;
+    }
+
+    public void CreateAccount()
+    {
+        var ecKey = Nethereum.Signer.EthECKey.GenerateKey();
+        var privateKey = ecKey.GetPrivateKey();
+        Debug.Log($"+-------------------------------------------------------------------------------------------+");
+        Debug.Log($"New Private key: <color=green> {privateKey} </color>");
+        var account = new Account(privateKey);
+        Debug.Log($"New Account address: <color=green> {account.Address} </color>");
+        Debug.Log($"+-------------------------------------------------------------------------------------------+");
     }
 }
