@@ -194,3 +194,4 @@ Received Import Request.
 Start importing Assets/Scenes/TransferEther.prefab using Guid(37f54aaf0e127f341b06a32d4b147abc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac39785a473bc68cf2dbd644bf5347c5') in 0.074456 seconds 
   Import took 0.133915 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
